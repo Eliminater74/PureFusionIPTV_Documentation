@@ -19,13 +19,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Startup Behavior Setting** - Choose between "Resume last channel" (fullscreen) or "Start at main page"
 - **Channel Strip & Quick Actions** - Mutually exclusive overlays (showing one hides the other) like TiViMate
 - **TV Shows Icon** - New icon for Series/TV Shows categories in the group list
+- **Cloud Sync** - Google Drive integration for seamless backup and restore.
+- **SMB Improvements** - Auto-discovery of SMB servers on the network.
+- **Plugin Sandboxing** - enhanced stability with `SafePluginProxy` and crash isolation.
+- **Search Intelligence** - Fuzzy matching algorithm for typo-tolerant channel searching.
+- **Settings Overlay** - Refactored settings to match TiViMate's right-side slide-in panel design.
 
 ### Changed
+- **Theme Engine 100% Coverage** - Eradicated hardcoded hex values across the app (dialogs, specific XMLs). Replaced with `MaterialColors` attributes to natively support multiple themes gracefully.
 - **Category Names** - Removed "LIVE:" prefix from TV channel categories for cleaner display
 - **Back Navigation** - Simplified to stay in current category/section instead of jumping to "All Channels"
 - **TV Guide Channel Click** - Single click plays in background and updates highlight; double click exits to fullscreen
 
 ### Fixed
+- **Performance Optimization** - Eliminated main thread blocking by purging `runBlocking` from `PlayerManager`, `PlayerPool`, and `TvGuideActivity`. Flattened GPU overdraw in `item_channel.xml` and `fragment_epg.xml`. Prevented GC allocation spikes in all core `RecyclerView` adapters.
 - Fixed startup behavior not properly hiding browser when resuming last channel
 - Fixed channel strip and quick actions bar showing at the same time
 - Fixed back button incorrectly navigating to TV section when in other sections

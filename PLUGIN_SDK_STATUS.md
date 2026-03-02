@@ -87,7 +87,7 @@
 - **ServiceLoader pattern** - Java standard for plugin discovery
 - **META-INF/services** registration file
 - **Explicit registration** - Alternative programmatic registration via `PluginManager.registerPlugin()`
-- **Dynamic loading** - Future support for external APK loading
+- **Dynamic loading** - Full support for external APK loading at runtime via `DexClassLoader`
 
 ### Version Compatibility
 - **Semantic versioning** - "major.minor.patch" format
@@ -346,17 +346,15 @@ pluginSettingsScreens.forEach { screen ->
 
 ## Known Limitations
 
-1. **No runtime plugin loading** - Plugins must be compiled with app (for now)
-2. **No plugin marketplace** - Future enhancement
-3. **No plugin permissions system** - All plugins have full access
-4. **No plugin sandboxing** - Plugins run in same process
-5. **No plugin update mechanism** - Must update entire app
+1. **No plugin marketplace** - Future enhancement
+2. **No plugin permissions system** - All plugins have full access
+3. **No plugin sandboxing** - Plugins run in same process
+4. **No plugin update mechanism** - Must update entire app or replace APK manually
 
 ---
 
 ## Future Enhancements
 
-- **Dynamic plugin loading** - Load plugins from external APKs
 - **Plugin marketplace** - Download/install plugins from repository
 - **Plugin permissions** - Fine-grained access control
 - **Plugin sandboxing** - Isolate plugins in separate processes

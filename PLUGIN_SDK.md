@@ -180,6 +180,10 @@ val pluginManager = ... // Get from Hilt
 pluginManager.registerPlugin(MyEpgPlugin())
 ```
 
+### Step 3: Register Your Plugin (Option C: External APK Sideloading)
+
+You can build your plugin as an independent Android Library or App project, compile it into an `.apk` or `.dex` file, and drop it directly into the application's internal `plugins` folder. The app's `PluginManager` uses `DexClassLoader` to dynamically load external plugins at runtime. Ensure you include the `META-INF/services/` registry file explained in Option A inside your APK!
+
 ---
 
 ## Plugin Lifecycle
@@ -418,6 +422,8 @@ PureFusionIPTV discovers plugins using Java ServiceLoader. To make your plugin d
    ```
    com.example.myplugin.MyCustomPlugin
    ```
+
+3. (For External Sideloading) Package your module as an `.apk` and copy it into the app's internal `plugins` directory at runtime.
 
 ---
 

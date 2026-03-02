@@ -509,7 +509,7 @@ class SettingsActivity : AppCompatActivity() {
 3. **Maintainability** - Easier to update/fix independently
 4. **Extensibility** - Easy to add OneDrive, Dropbox plugins
 5. **Testing** - Can test plugin independently
-6. **Distribution** - Could distribute plugins separately (future)
+6. **Distribution** - Can distribute community plugins separately as standalone APKs loaded at runtime!
 
 ---
 
